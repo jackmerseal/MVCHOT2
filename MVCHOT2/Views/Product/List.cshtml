@@ -30,8 +30,6 @@
 						<td>@product.ProductImage</td>
 						<td>@product.ProductPrice.ToString("C")</td>
 						<td>@product.ProductQty</td>
-					
-						
 						<td><a asp-controller="Product" asp-action="Edit" asp-route-id="@product.ProductID" asp-route-slug="@product.Slug" class="btn btn-primary">Edit</a></td>
 						<td><a asp-controller="Product" asp-action="Delete" asp-route-id="@product.ProductID" asp-route-slug="@product.Slug" class="btn btn-primary">Delete</a></td>
 					</tr>

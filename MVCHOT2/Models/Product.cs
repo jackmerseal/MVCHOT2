@@ -7,8 +7,8 @@ namespace MVCHOT2.Models
         public int ProductID { get; set; }
         [Required(ErrorMessage = "Please enter a name")]
         public string ProductName { get; set; } = "";
-        public string ProductDescShort { get; set; } = "";
-        public string ProductDescLong { get; set; } = "";
+        public string? ProductDescShort { get; set; } = "";
+        public string? ProductDescLong { get; set; } = "";
         [Required(ErrorMessage = "Please enter an image")]
         public string ProductImage { get; set; } = "";
         [Range(1, 100000, ErrorMessage = "Price must be between 1 and 100000")]

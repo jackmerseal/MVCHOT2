@@ -3,7 +3,6 @@
 	ViewBag.Title = $"{ViewBag.Action}";
 }
 <div class="container">
-	<h1 class="p-5 text-center bg-black text-white">Product Manager</h1>
 	<h2 class="ms-3">@ViewBag.Action</h2>
 	<form asp-action="Edit" method="post">
 		<div class="m-3">
@@ -39,7 +38,7 @@
 		<div class="m-3">
 			<label asp-for="CategoryID" class="form-label">Category</label>
 			<select asp-for="CategoryID" class="form-control">
-				<option value="">-- Select Category --</option>
+				<option value="">select a category</option>
 				@foreach (var category in ViewBag.Categories)
 				{
 						<option value="@category.CategoryID">@category.CategoryName</option>
@@ -49,8 +48,8 @@
 			<span asp-validation-for="CategoryID" class="text-danger"></span>
 		</div>
 		<div class="m-3">
-			<button type="submit" class="btn bg-black text-white">Save</button>
-			<a asp-controller="Product" asp-action="List" asp-route-id="@Model.ProductID" class="btn bg-black text-white">Cancel</a>
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a asp-controller="Product" asp-action="List" asp-route-id="@Model.ProductID" class="btn btn-primary">Cancel</a>
 		</div>
 	</form>
 </div>

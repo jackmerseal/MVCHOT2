@@ -18,7 +18,8 @@ namespace MVCHOT2.Models
 
         public string Slug => ProductName?.Replace(' ', '-').ToLower() + '-';
 
-        public int CategoryId { get; set; }
+        public int CategoryID { get; set; }
+
         [ValidateNever]
         public Category Category { get; set; } = null!;
     }

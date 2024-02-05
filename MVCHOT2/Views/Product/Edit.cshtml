@@ -1,0 +1,57 @@
+﻿@model Product
+@{
+	ViewBag.Title = $"{ViewBag.Action}";
+}
+<div class="container">
+	<h1 class="p-5 text-center bg-black text-white">Product Manager</h1>
+	<h2 class="ms-3">@ViewBag.Action</h2>
+	<form asp-action="Edit" method="post">
+		<div class="m-3">
+			<label asp-for="ProductName">Product Name</label>
+			<input asp-for="ProductName" class="form-control" />
+			<span asp-validation-for="ProductName" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="ProductDescShort">Short Description</label>
+			<input asp-for="ProductDescShort" class="form-control" />
+			<span asp-validation-for="ProductDescShort" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="ProductDescLong">Long Description</label>
+			<input asp-for="ProductDescLong" class="form-control" />
+			<span asp-validation-for="ProductDescLong" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="ProductImage">Image</label>
+			<input asp-for="ProductImage" class="form-control" />
+			<span asp-validation-for="ProductImage" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="ProductPrice">Price</label>
+			<input asp-for="ProductPrice" class="form-control" />
+			<span asp-validation-for="ProductPrice" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="ProductQty">Quantity</label>
+			<input asp-for="ProductQty" class="form-control" />
+			<span asp-validation-for="ProductQty" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<label asp-for="CategoryID" class="form-label">Category</label>
+			<select asp-for="CategoryID" class="form-control">
+				<option value="">-- Select Category --</option>
+				@foreach (var category in ViewBag.Categories)
+				{
+						<option value="@category.CategoryID">@category.CategoryName</option>
+				}
+			</select>
+			<input type="hidden" asp-for="ProductID" />
+			<span asp-validation-for="CategoryID" class="text-danger"></span>
+		</div>
+		<div class="m-3">
+			<button type="submit" class="btn bg-black text-white">Save</button>
+			<a asp-controller="Product" asp-action="List" asp-route-id="@Model.ProductID" class="btn bg-black text-white">Cancel</a>
+		</div>
+	</form>
+</div>
+
